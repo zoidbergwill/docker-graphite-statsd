@@ -113,6 +113,9 @@ COPY conf /
 
 # copy /opt from build image
 COPY --from=build /opt /opt
+RUN set -ex; \
+  chmod -R a+w /etc/service; \
+  chmod -R a+r /var/lib/nginx
 
 
 # defaults
